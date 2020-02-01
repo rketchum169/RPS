@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <style>
+        body {
+            align-items: center;
+        }
+        
+        #Rock {
+            padding:20px;
+        }
+
+
+    </style>
         <title>R,P,S</title>
     </head>
 
     <body>
-        <h1>Pick Your Weapon of Choice</h1>
+        <h1>Choose Your Weapon</h1>
+        <p>Result Will Happen Instantly. Keep Playing as you please</p>
         <button id="Rock">Rock</button>
         <button id="Paper">Paper</button>
         <button id="Scissors">Scissors</button>
         <h2></h2>
+        <p id="countdown"></p>
+        <h3></h3>
     <script>
+
+        const countdownspot = document.getElementById("countdown")
         const rock = document.getElementById("Rock")
         const paper = document.getElementById("Paper")
         const scissors = document.getElementById("Scissors")
-        const display = document.querySelector("h2")
+        const userdisplay = document.querySelector("h2")
+        const outcome = document.querySelector("h3")
         const options = ["Rock","Paper","Scissors"]
+
+        function timedcountdown() {
+            setTimeout((countdown.innerHTML = "3"), 1000)
+            setTimeout((countdown.innerHTML = "2"), 1000)
+            setTimeout((countdown.innerHTML = "1"), 1000)
+            countdown.innerHTML = ""
+        }
         
         rock.addEventListener("click", (e)=> {
             e.preventDefault()
             const compchoice = options[Math.floor(Math.random() * options.length)]
-            let currentText = display.innerText
             let userchoice = rock.innerText
-            display.innerText = userchoice
+            userdisplay.innerText = userchoice
 
             if (compchoice == "Scissors"){
-                return console.log("You win")
+                return outcome.innerHTML = "I have Scissors. You Win"
             } else if (compchoice == "Paper") {
-                return console.log("I Win")
+                return outcome.innerHTML = "I have Paper. I Win"
             } else if (compchoice == "Rock") {
-                return console.log("We Tied")
+                return outcome.innerHTML = "I have Rock. We Tied"
             }
         
         })
@@ -37,16 +60,15 @@
         paper.addEventListener("click", (e)=> {
             e.preventDefault()
             const compchoice = options[Math.floor(Math.random() * options.length)]
-            let currentText = display.innerText
             let userchoice = paper.innerText
-            display.innerText = userchoice
+            userdisplay.innerText = userchoice
 
             if (compchoice == "Scissors"){
-                return console.log("I win")
+                return outcome.innerHTML = "I have Scissors. I win"
             } else if (compchoice == "Paper") {
-                return console.log("We Tied")
+                return outcome.innerHTML = "I have Paper. We Tied"
             } else if (compchoice == "Rock") {
-                return console.log("You win")
+                return outcome.innerHTML = "I have Rock. You win"
             }
         
         })
@@ -54,16 +76,16 @@
         scissors.addEventListener("click", (e)=> {
             e.preventDefault()
             const compchoice = options[Math.floor(Math.random() * options.length)]
-            let currentText = display.innerText
+
             let userchoice = scissors.innerText
-            display.innerText = userchoice
+            userdisplay.innerText = userchoice
 
             if (compchoice == "Scissors"){
-                return console.log("We tied")
+                return outcome.innerHTML = "I have Scissors. We tied"
             } else if (compchoice == "Paper") {
-                return console.log("You Win")
+                return outcome.innerHTML = "I have Paper. You Win"
             } else if (compchoice == "Rock") {
-                return console.log("I win")
+                return outcome.innerHTML =  "I have Rock. I win"
             }
         
         })
