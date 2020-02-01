@@ -3,18 +3,31 @@
     <head>
     <style>
         body {
-            align-items: center;
+            margin-top: 30px;
+            
         }
         
         #Rock {
-            padding:20px;
+
+            padding:30px;
+
         }
 
+        #Paper {
+            padding:30px;
+        }
+
+        #Scissors {
+            padding: 30px;
+        }
+
+        h2 {
+            transition-timing-function: ease;
+        }
 
     </style>
         <title>R,P,S</title>
-    </head>
-
+</head>
     <body>
         <h1>Choose Your Weapon</h1>
         <p>Result Will Happen Instantly. Keep Playing as you please</p>
@@ -33,13 +46,6 @@
         const userdisplay = document.querySelector("h2")
         const outcome = document.querySelector("h3")
         const options = ["Rock","Paper","Scissors"]
-
-        function timedcountdown() {
-            setTimeout((countdown.innerHTML = "3"), 1000)
-            setTimeout((countdown.innerHTML = "2"), 1000)
-            setTimeout((countdown.innerHTML = "1"), 1000)
-            countdown.innerHTML = ""
-        }
         
         rock.addEventListener("click", (e)=> {
             e.preventDefault()
@@ -91,7 +97,6 @@
         })
     
     </script>
-
     </body>
 
 </html>
